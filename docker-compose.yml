@@ -1,0 +1,39 @@
+version: '3.3'
+volumes:
+  data:
+services:
+    api:
+        container_name: dump_api
+        build: .
+        volumes: 
+            - .:/usr/app
+            - /usr/app/node_modules
+        ports:
+            - "3000:3000"
+        tty: true
+        depends_on: 
+            - db
+        links: 
+            - db
+
+    db:
+        container_name: database_mysql
+        image: mysql:5.6
+        command: --init-file /data/application/init.sql
+        ports:
+            - "3306:3306"
+        volumes:
+            - ./init.sql:/data/application/init.sql
+            # - ./data:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=password
+
+    phpmyadmin:
+        container_name: phpmyadmin
+        image: phpmyadmin/phpmyadmin:latest
+        links:
+            - db
+        ports:
+            - 80:80
+        environment:
+            - PMA_ARBITRARY=1
