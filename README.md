@@ -16,7 +16,7 @@
 
 ### 🏠 [Homepage](https://github.com/1995Everton/dump-api.git#readme)
 
-### ✨ [Demo Dump](https://github.com/1995Everton/dump-api/blob/master/bin/leagueoflegends.sql)
+### ✨ [Demo Dump](https://raw.githubusercontent.com/1995Everton/dump-api/master/dump-exemple/leagueoflegends.sql)
 
 ## Requirements
 
