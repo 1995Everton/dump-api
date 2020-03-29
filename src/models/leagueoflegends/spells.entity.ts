@@ -11,17 +11,17 @@ export class Spells {
     @Column({ nullable:false })
     key: string;
 
-    @Column({ default: 0 })
-    maxrank: number;
+    @Column({ default: '0'  })
+    maxrank: string;
 
-    @Column({ default: '' })
+    @Column({ default: '0' })
     cooldown: string;
 
-    @Column({ default: 0 })
+    @Column({ default: '0' })
     cost: string;
 
-    @Column({ default: 0 })
-    range: number;
+    @Column({ default: '0' })
+    range: string;
 
     @Column({ default: '' })
     icon: string;
