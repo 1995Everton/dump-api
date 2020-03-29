@@ -81,7 +81,7 @@ export class LeagueoflegendsService {
     public async createTags(value : string): Promise<Tags>{
         const result = await this.tagsModel.findOne( { where : { name: value } } );
         if(!result){
-            return await this.tagsModel.save({  });
+            return await this.tagsModel.save({ name: value });
         }
         return result;
     }
